@@ -25,6 +25,7 @@ function TodoApp() {
     //     { id: 3, task: "Grow Beard", completed: false }
     // ];
 
+
     // useEffect(() => {
     //     window.localStorage.setItem("todos", JSON.stringify(todos))
     // }, [todos]);
