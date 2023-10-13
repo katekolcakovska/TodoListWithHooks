@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Paper from "@mui/material/Paper";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 
 import Todo from './Todo';
+import { TodosContext } from "./contexts/todos.context";
 
-function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
+function TodoList() {
+    const { todos } = useContext(TodosContext);
     if (todos.length)
         return (
             <Paper>
@@ -18,9 +20,9 @@ function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
                                 // task={todo.task}
                                 // completed={todo.completed} {...todo mesto site ovie posebno}
                                 key={todo.id}
-                                removeTodo={removeTodo}
-                                toggleTodo={toggleTodo}
-                                editTodo={editTodo}
+                            // removeTodo={removeTodo}
+                            // toggleTodo={toggleTodo}
+                            // editTodo={editTodo} ovie ne treba vekje da gi passnuvame so context
                             />
                             {i < todos.length - 1 && <Divider />}
                         </React.Fragment>
